@@ -100,6 +100,15 @@ CLIMATES: dict[
             translation_key="wine",
         ),
     ),
+    "WH": (
+        HonClimateEntityDescription(
+            key="settings.tempSel",
+            mode=HVACMode.HEAT,
+            name="Water Heater",
+            icon="mdi:thermometer",
+            translation_key="water_heater",
+        ),
+    ),
 }
 
 

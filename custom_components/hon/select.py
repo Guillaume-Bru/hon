@@ -205,6 +205,15 @@ SELECTS: dict[str, tuple[SelectEntityDescription, ...]] = {
             translation_key="temperature",
         ),
     ),
+    "WH": (
+        HonSelectEntityDescription(
+            key="settings.machMode",
+            name="Mode",
+            icon="mdi:information",
+            option_list=const.WH_MACH_MODE,
+            translation_key="mach_modes_wh",
+        ),
+    ),
 }
 
 SELECTS["WD"] = unique_entities(SELECTS["WM"], SELECTS["TD"])

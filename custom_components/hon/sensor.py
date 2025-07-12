@@ -803,6 +803,42 @@ SENSORS: dict[str, tuple[SensorEntityDescription, ...]] = {
             key="errors", name="Error", icon="mdi:math-log", translation_key="errors"
         ),
     ),
+    "WH": (
+        HonSensorEntityDescription(
+            key="temp",
+            name="Temperature",
+            state_class=SensorStateClass.MEASUREMENT,
+            device_class=SensorDeviceClass.TEMPERATURE,
+            native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+            translation_key="temperature",
+        ),
+        HonSensorEntityDescription(
+            key="tempSel",
+            name="Target Temperature",
+            icon="mdi:thermometer",
+            state_class=SensorStateClass.MEASUREMENT,
+            device_class=SensorDeviceClass.TEMPERATURE,
+            native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+            translation_key="target_temperature",
+        ),
+        HonSensorEntityDescription(
+            key="sterilizationTempSel",
+            name="Sterilization Target Temperature",
+            icon="mdi:thermometer",
+            state_class=SensorStateClass.MEASUREMENT,
+            device_class=SensorDeviceClass.TEMPERATURE,
+            native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+            translation_key="sterilization_target_temperature",
+        ),
+        HonSensorEntityDescription(
+            key="machMode",
+            name="Mode",
+            icon="mdi:information",
+            device_class=SensorDeviceClass.ENUM,
+            option_list=const.WH_MACH_MODE,
+            translation_key="mach_modes_wh",
+        ),
+    ),
 }
 SENSORS["WD"] = unique_entities(SENSORS["WM"], SENSORS["TD"])
 

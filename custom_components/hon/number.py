@@ -201,6 +201,23 @@ NUMBERS: dict[str, tuple[NumberEntityDescription, ...]] = {
             translation_key="pollen_level",
         ),
     ),
+    "WH": (
+        HonNumberEntityDescription(
+            key="settings.tempSel",
+            name="Target Temperature",
+            icon="mdi:thermometer",
+            native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+            translation_key="target_temperature",
+        ),
+        HonNumberEntityDescription(
+            key="settings.sterilizationTempSel",
+            name="Sterilization Target Temperature",
+            icon="mdi:thermometer",
+            native_unit_of_measurement=UnitOfTemperature.CELSIUS,
+            translation_key="sterilization_target_temperature",
+        ),
+
+    ),
 }
 
 NUMBERS["WD"] = unique_entities(NUMBERS["WM"], NUMBERS["TD"])

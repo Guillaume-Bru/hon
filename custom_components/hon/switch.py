@@ -396,6 +396,16 @@ SWITCHES: dict[str, tuple[SwitchEntityDescription, ...]] = {
             translation_key="super_cool",
         ),
     ),
+    "WH": (
+        HonControlSwitchEntityDescription(
+            key="onOffStatus",
+            name="Power",
+            icon="mdi:power-standby",
+            turn_on_key="startProgram",
+            turn_off_key="stopProgram",
+            translation_key="power",
+        ),
+    ),
 }
 
 SWITCHES["WD"] = unique_entities(SWITCHES["WD"], SWITCHES["WM"])
